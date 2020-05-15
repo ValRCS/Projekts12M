@@ -1,0 +1,31 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    /* background: url("../img/relaxing-cat.jpg") repeat; */
+    background: no-repeat url("../img/relaxing-cat.jpg") center;
+}
+
+.box {
+    border-width: 5px;
+    border-style: solid;
+    border-color: indigo;
+}
+
+.mybox1 {
+    background-color: khaki;
+    margin: 10px;
+}
+
+.mybox2 {
+    background-color: orange;
+    margin: 5px;
+}
+
+.mybox3 {
+    width: 100%;
+    padding: 15px;
+}

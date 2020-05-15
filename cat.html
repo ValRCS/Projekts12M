@@ -4,13 +4,28 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Cat App</title>
+        <link
+            href="https://fonts.googleapis.com/css?family=Lobster"
+            rel="stylesheet"
+            type="text/css"
+        />
+
+        <style>
+            h2 {
+                color: green;
+            }
+        </style>
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
         <header><h1>Cat Page</h1></header>
 
         <h2>CatPhotoApp</h2>
         <main>
-            <p>Click here to view more <a href="#">cat photos</a>.</p>
+            <p style="color: red;">
+                Click here to view more <a href="#">cat photos</a>.
+            </p>
+            <a href="#bottom">Bottom</a>
             <p>Click here to view more <a href="#">cat photos</a>.</p>
             <p>Click here to view more <a href="#">cat photos</a>.</p>
 
@@ -50,7 +65,7 @@
                 </ol>
             </div>
 
-            <form action="/submit-cat-photo">
+            <form class="thick-indigo-border" action="/submit-cat-photo">
                 <label for="indoor"
                     ><input
                         id="indoor"
@@ -102,6 +117,7 @@
                 <button type="submit">Submit</button>
             </form>
         </main>
+        <a href="#top">Uz kaut kurieni</a>
         <footer>&copy; 2020</footer>
     </body>
 </html>
