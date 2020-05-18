@@ -1,0 +1,28 @@
+/* div {
+    background-color: silver;
+} */
+
+/* .d2 {
+    background-color: peru;
+} */
+
+.d3 {
+    background-color: royalblue;
+    text-align: center;
+}
+
+.d2 .d3 {
+    background-color: rgb(124, 14, 14);
+    text-align: left;
+}
+
+.d2 > .d3 {
+    background-color: rgb(137, 168, 74);
+    text-align: right;
+}
+
+@media (max-width: 400px) {
+    .d3 {
+        background-color: thistle;
+    }
+}
