@@ -6,7 +6,8 @@
 
 body {
     /* background: url("../img/relaxing-cat.jpg") repeat; */
-    background: no-repeat url("../img/relaxing-cat.jpg") center;
+    /* background: no-repeat url("../img/relaxing-cat.jpg") center; */
+    background-color: papayawhip;
 }
 
 .box {
@@ -28,4 +29,8 @@ body {
 .mybox3 {
     width: 100%;
     padding: 15px;
+}
+
+#box4 {
+    color: orange;
 }
