@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Flex Examples</title>
+        <style>
+            :root {
+                font-size: 18px;
+            }
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                /* flex-direction: row-reverse; */
+                /* flex-direction: column; */
+                /* flex-direction: column-reverse; */
+                /* justify-content: center; */
+                /* justify-content: space-around; */
+                justify-content: space-between;
+            }
+            .child {
+                width: 6rem;
+                height: 6rem;
+                border: 0.25rem solid aquamarine;
+                margin: 0.1rem;
+            }
+
+            .child3 {
+                background-color: silver;
+                display: flex;
+                justify-content: space-between;
+            }
+            .gchild {
+                width: 25%;
+                height: 4rem;
+                background-color: burlywood;
+                /* overflow: hidden; */
+                /* overflow: scroll; */
+                overflow: auto;
+                /* text-overflow: ellipsis; */
+                text-overflow: clip;
+            }
+
+            .child4 {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+            .gchild4 {
+                width: 2rem;
+                height: 2rem;
+                background-color: chocolate;
+            }
+
+            .child2 {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Flex Examples</h1>
+        </header>
+        <main>
+            <div class="container">
+                <div class="child child1">Kaste 01</div>
+                <div class="child child2">Kaste 02</div>
+                <div class="child child3">
+                    <!-- Kaste 03 -->
+                    <div class="gchild">Grandkids 1</div>
+                    <div class="gchild">Grandkids 2</div>
+                    <div class="gchild">
+                        Grandkids 3 doing homework playing outside
+                    </div>
+                </div>
+                <div class="child child4">
+                    <div class="gchild4">G4</div>
+                    <div class="gchild4">G4</div>
+                </div>
+                <div class="child child5">Kaste 05</div>
+            </div>
+        </main>
+        <footer>C 2020</footer>
+    </body>
+</html>
