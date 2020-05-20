@@ -1,9 +1,37 @@
 p {
-    font-size: 1.5rem;
+    font-size: 0.8rem;
     color: green;
 }
 
-@media (max-width: 992px) {
+@media screen and (min-width: 576px) {
+    main {
+        background-color: paleturquoise;
+    }
+    p {
+        font-size: 1.2rem;
+        color: brown;
+    }
+
+    .hide-md {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    main {
+        border: 5px solid black;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    .hide-md {
+        display: block;
+    }
+}
+
+/* @media (max-width: 992px) {
     main {
         background-color: rgb(226, 164, 164);
     }
@@ -21,4 +49,4 @@ p {
         font-size: 1rem;
         color: orangered;
     }
-}
+} */
