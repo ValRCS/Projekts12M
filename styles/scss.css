@@ -1,17 +1,27 @@
 .header {
-    text-align: center;
+  text-align: center;
+}
+
+.blog-post .mybox {
+  height: 20%;
+  border: 5px solid #7c7c36;
+  -webkit-box-shadow: 0px 0px 14px #7c7c36;
+  -ms-box-shadow: 0px 0px 14px #7c7c36;
+  box-shadow: 0px 0px 14px #7c7c36;
+  border-radius: 20%;
 }
 
 .blog-post h1 {
-    text-align: center;
-    color: green;
+  text-align: center;
+  color: #36367c;
 }
 
 .blog-post p {
-    font-size: 20px;
+  font-size: 24px;
+  color: #36367c;
 }
 
 .blog-post p span {
-    font-weight: 700;
+  font-weight: 700px;
 }
 /*# sourceMappingURL=scss.css.map */

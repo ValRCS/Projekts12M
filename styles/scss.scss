@@ -1,18 +1,26 @@
-$text-color: green;
+@import "variables";
+@import "mixins";
 
 .header {
     text-align: center;
 }
 
 .blog-post {
+    .mybox {
+        height: 20%;
+        border: 5px solid $text-color;
+        @include box-shadow(0px, 0px, 14px, $text-color);
+        @include border-radius(20%);
+    }
     h1 {
         text-align: center;
-        color: $text-color;
+        color: $secondary-color;
     }
     p {
-        font-size: 20px;
+        font-size: $my-font-size;
+        color: $secondary-color;
         span {
-            font-weight: 300;
+            font-weight: $bold-font-weight;
         }
     }
 }
