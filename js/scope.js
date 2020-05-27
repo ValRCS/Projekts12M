@@ -1,3 +1,17 @@
+let myArr = [1, 2, 3, 4];
+let myNumber = 77;
+
+function modifyArrNotNumber(arr, number) {
+    arr[2] = "Saule"; //so myArr will get modified if passed
+    number = 25; //but myNumber will not be modified
+    return arr[0] + number;
+}
+console.log(myArr);
+console.log(myNumber);
+modifyArrNotNumber(myArr, myNumber);
+console.log(myArr);
+console.log(myNumber);
+
 console.log("Starting scope.js");
 
 var myGlobal = 10;
