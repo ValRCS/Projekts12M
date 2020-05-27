@@ -3,13 +3,18 @@
 // console.log(5 + 10);
 var a = 9000;
 let myName = "Valdis";
+let myArray = [1, 6, 8, 2, 70, 43545, 2, 6, 7];
+let arrLen = myArray.push(5, 9);
+console.log(arrLen, myArray.length);
+console.log(myArray);
+var myStr = 'I am a "double quoted" string inside "double quotes".';
+var someAdjective = "rewarding";
+var myStr = "Learning to code is ";
+myStr += someAdjective;
+console.log(myStr);
 console.log("hi there");
-console.log("hi there");
-console.log("hi there");
-console.log("hi there");
-
 console.log("Hi " + myName + " your power level is over " + a);
-
+console.log("My name is " + myName.length + " letters long");
 a = a + 10;
 console.log(a);
 
@@ -30,12 +35,8 @@ console.log(result);
 result = result + 6;
 console.log(result);
 result--;
-result--;
-result--;
-result--;
-result--;
-result--;
-result--;
-result--;
-result--;
 console.log(result);
+var x = 0.1;
+var y = 0.2;
+var rez = x + y;
+console.log(rez);
