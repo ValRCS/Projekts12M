@@ -17,10 +17,20 @@ var collection = {
     5439: {
         album: "ABBA Gold",
     },
+    favorite: {
+        artist: "Jumprava",
+        tracks: ["Pa vējam"],
+    },
 };
 
 // Only change code below this line
 function updateRecords(id, prop, value) {
+    //sanity check first if there is such an id
+    if (!collection.hasOwnProperty(id)) {
+        console.log("oops no such id", id);
+        return collection;
+    }
+
     if (value === "") {
         delete collection[id][prop];
         return collection;
@@ -40,4 +50,11 @@ function updateRecords(id, prop, value) {
     return collection;
 }
 
+console.log(JSON.stringify(collection));
 console.log(collection);
+updateRecords("nosuchid", "album", "Aluminija Cūka");
+updateRecords(2468, "album", "Aluminija Cūka");
+updateRecords(2468, "tracks", "Purple");
+updateRecords(2468, "artist", "Fredis");
+updateRecords(2468, "artist", "Fredis");
+updateRecords(1245, "artist", "");
