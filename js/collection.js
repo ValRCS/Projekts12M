@@ -128,24 +128,34 @@ function lookUpProfile(name, prop) {
     //loop through contacts
     //check if firstName matches name
     //if prop exists for that object return the value for the property
-    for (const contact of contacts) {
-        console.log(contact.firstName);
-        if (contact.firstName === name) {
+    // for (const contact of contacts) {
+    //     console.log(contact.firstName);
+    //     if (contact.firstName === name) {
+    //         console.log("Found Match");
+    //         //TODO check if property exists
+    //         if (contact.hasOwnProperty(prop)) {
+    //             return contact[prop];
+    //         } else {
+    //             //so no such property
+    //             return "No such property";
+    //         }
+    //     }
+    // }
+
+    //iterating with index, also works fine
+    for (let i = 0; i < contacts.length; i++) {
+        console.log(contacts[i].firstName);
+        if (contacts[i].firstName === name) {
             console.log("Found Match");
             //TODO check if property exists
-            if (contact.hasOwnProperty(prop)) {
-                return contact[prop];
+            if (contacts[i].hasOwnProperty(prop)) {
+                return contacts[i][prop];
             } else {
                 //so no such property
                 return "No such property";
             }
         }
     }
-
-    //iterating with index, also works fine
-    // for (let i=0; i< contacts.length;i++) {
-    //     console.log(contacts[i].firstName);
-    // }
     //if loop finishes then that means there is no such contact
     return "No such contact";
     // Only change code above this line
