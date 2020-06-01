@@ -94,3 +94,63 @@ function multiplyAll(arr) {
     // Only change code above this line
     return product;
 }
+
+// Setup
+var contacts = [
+    {
+        firstName: "Akira",
+        lastName: "Laine",
+        number: "0543236543",
+        likes: ["Pizza", "Coding", "Brownie Points"],
+    },
+    {
+        firstName: "Harry",
+        lastName: "Potter",
+        number: "0994372684",
+        likes: ["Hogwarts", "Magic", "Hagrid"],
+    },
+    {
+        firstName: "Sherlock",
+        lastName: "Holmes",
+        number: "0487345643",
+        likes: ["Intriguing Cases", "Violin"],
+    },
+    {
+        firstName: "Kristian",
+        lastName: "Vos",
+        number: "unknown",
+        likes: ["JavaScript", "Gaming", "Foxes"],
+    },
+];
+
+function lookUpProfile(name, prop) {
+    // Only change code below this line
+    //loop through contacts
+    //check if firstName matches name
+    //if prop exists for that object return the value for the property
+    for (const contact of contacts) {
+        console.log(contact.firstName);
+        if (contact.firstName === name) {
+            console.log("Found Match");
+            //TODO check if property exists
+            if (contact.hasOwnProperty(prop)) {
+                return contact[prop];
+            } else {
+                //so no such property
+                return "No such property";
+            }
+        }
+    }
+
+    //iterating with index, also works fine
+    // for (let i=0; i< contacts.length;i++) {
+    //     console.log(contacts[i].firstName);
+    // }
+    //if loop finishes then that means there is no such contact
+    return "No such contact";
+    // Only change code above this line
+}
+
+console.log(lookUpProfile("Akira", "likes"));
+//console.log(lookUpProfile("Akira", "dislikes"));
+//console.log(lookUpProfile("Valdis", "likes"));
