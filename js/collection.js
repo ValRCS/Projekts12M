@@ -58,3 +58,39 @@ updateRecords(2468, "tracks", "Purple");
 updateRecords(2468, "artist", "Fredis");
 updateRecords(2468, "artist", "Fredis");
 updateRecords(1245, "artist", "");
+
+var myArr = [2, 3, 4, 5, 6];
+
+// Only change code below this line
+let total = 0;
+// for (let i=0; i < myArr.length ; i++){
+//   total += myArr[i];
+//   console.log(i, myArr[i], "Total is", total);
+//   //add to total here
+// }
+//new ES6 for iteration over arrays
+for (const element of myArr) {
+    console.log(element);
+    total += element;
+}
+console.log(total);
+
+function multiplyAll(arr) {
+    let product = 1;
+    // Only change code below this line
+    // for (let i=0; i < arr.length; i++) {
+    //   for (let j=0; j < arr[i].length; j++) {
+    //     console.log(arr[i][j]);
+    //     product *= arr[i][j];
+    //   }
+    // }
+
+    for (const innerArr of arr) {
+        for (const element of innerArr) {
+            product *= element;
+        }
+    }
+
+    // Only change code above this line
+    return product;
+}
