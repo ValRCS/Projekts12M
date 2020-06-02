@@ -3,6 +3,7 @@
 }
 
 .round-corners {
+    border: green solid 3px;
     border-radius: 5px;
 }
 

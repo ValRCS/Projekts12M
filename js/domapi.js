@@ -1,3 +1,5 @@
+const myApp = document.getElementById("myApp"); //then this will be globally accessible
+
 function main() {
     console.log("Running Main");
     const app = document.getElementById("myApp");
@@ -20,14 +22,24 @@ function main() {
     );
 
     for (let i = 0; i < 20; i++) {
+        let myClassList = ["boxy"];
+        if (i % 2 == 0) {
+            myClassList.push("pale-bg");
+        } else {
+            myClassList.push("green-bg");
+        }
         addNewElement(
             app,
             "p",
-            "mySpecialPar",
-            ["boxy", "pale-bg"],
-            "My paragraph"
+            "myParId_" + i, //remember id have to be unique
+            myClassList,
+            "My paragraph No." + i
         );
     }
+
+    //could use global reference
+    addNewElement(myApp, "hr");
+    addNewElement(myApp, "div", "mydiv1", ["round-corners"], "My Text");
 }
 
 //TODO work on properties
