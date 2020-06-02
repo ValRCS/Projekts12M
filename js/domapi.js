@@ -68,12 +68,12 @@ function addNewElement(
 }
 
 //TODO refactor to use object for all properties
-function styleEl(el, height, width, bgColor, text = "") {
-    el.style.height = height;
-    el.style.width = width;
-    el.style.backgroundColor = bgColor;
+function styleEl(myElement, height, width, bgColor, text = "") {
+    myElement.style.height = height;
+    myElement.style.width = width;
+    myElement.style.backgroundColor = bgColor;
     if (text !== "") {
-        el.innerText = text;
+        myElement.innerText = text;
     }
 }
 //could just delete this function
