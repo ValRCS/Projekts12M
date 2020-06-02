@@ -1,0 +1,11 @@
+.pale-bg {
+    background-color: palevioletred;
+}
+
+.round-corners {
+    border-radius: 5px;
+}
+
+.green-bg {
+    background-color: rgb(29, 105, 29);
+}

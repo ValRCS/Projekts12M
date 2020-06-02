@@ -17,23 +17,36 @@ function main() {
     //until the next line newElement is hanging in the air
     app.appendChild(newElement);
 
+    //if you remove boxy class boxes collection will be gone
     const boxes = document.getElementsByClassName("boxy");
     //different ways of looping through boxes
     for (let i = 0; i < boxes.length; i++) {
         boxes[i].innerText = "I am box No." + i;
     }
+    // https://www.w3schools.com/howto/howto_js_add_class.asp
     for (const box of boxes) {
-        box.style.backgroundColor = "aquamarine";
+        // box.style.backgroundColor = "aquamarine";
+        box.classList.add("round-corners");
+        box.classList.remove("pale-bg");
+        box.classList.add("green-bg");
     }
 
     //there is also forEach but we have to convert HTMLcollection to Array first
     Array.from(boxes).forEach((element) => {
         element.style.border = "dotted green 5px";
+        // element.classList.remove("boxy");
     });
 
     // so newElement moves from my app div to last box div here
+    console.log(boxes.length);
     boxes[4].appendChild(newElement);
     app.appendChild(boxes[4]);
+
+    //so HTML collection keeps a LIVE reference
+    //if we did not want a live count we could have converted to array
+    // const myArr = Array.from(boxes) first;
+    boxes[2].classList.remove("boxy");
+    console.log(boxes.length);
 }
 
 main();
