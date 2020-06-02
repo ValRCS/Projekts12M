@@ -9,18 +9,39 @@ function main() {
 
     addNewElement(app, "hr");
     addNewElement(app, "p");
+    addNewElement(app, "p", "", [], "My paragraph");
+    addNewElement(app, "p", "mySpecialPar", [], "My paragraph");
+    addNewElement(
+        app,
+        "p",
+        "mySpecialPar",
+        ["boxy", "pale-bg"],
+        "My paragraph"
+    );
 }
 
 //TODO work on properties
 function addNewElement(
     parent,
     tag,
-    id = null,
-    classList = [],
+    id = "",
+    myClassList = [],
     text = "",
     styleObj = {}
 ) {
     const newEl = document.createElement(tag);
+    if (id !== "") {
+        newEl.id = id;
+    }
+
+    if (myClassList.length > 0) {
+        newEl.classList.add(...myClassList);
+    }
+
+    if (text !== "") {
+        console.log("Adding", text);
+        newEl.innerText = text;
+    }
     parent.appendChild(newEl);
 }
 
