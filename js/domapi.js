@@ -1,8 +1,40 @@
 function main() {
-    console.log("Running domapi examples");
     console.log("Running Main");
-
     const app = document.getElementById("myApp");
+    const boxes = document.getElementsByClassName("boxy");
+
+    styleEl(app, "200px", "60%", "rgb(150, 130, 110)");
+    styleEl(boxes[3], "100px", "200px", "rgb(70, 70, 110)");
+    styleEl(boxes[1], "50px", "150px", "rgb(90, 70, 90)", "I am a simple box");
+
+    addNewElement(app, "hr");
+    addNewElement(app, "p");
+}
+
+//TODO work on properties
+function addNewElement(
+    parent,
+    tag,
+    id = null,
+    classList = [],
+    text = "",
+    styleObj = {}
+) {
+    const newEl = document.createElement(tag);
+    parent.appendChild(newEl);
+}
+
+//TODO refactor to use object for all properties
+function styleEl(el, height, width, bgColor, text = "") {
+    el.style.height = height;
+    el.style.width = width;
+    el.style.backgroundColor = bgColor;
+    if (text !== "") {
+        el.innerText = text;
+    }
+}
+//could just delete this function
+function unusedFun() {
     app.style.height = "200px";
     app.style.width = "70%";
     app.style.backgroundColor = "#AAAA11";
