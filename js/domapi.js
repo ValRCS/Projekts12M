@@ -3,7 +3,7 @@ function main() {
     const app = document.getElementById("myApp");
     const boxes = document.getElementsByClassName("boxy");
 
-    styleEl(app, "200px", "60%", "rgb(150, 130, 110)");
+    styleEl(app, "100%", "60%", "rgb(150, 130, 110)");
     styleEl(boxes[3], "100px", "200px", "rgb(70, 70, 110)");
     styleEl(boxes[1], "50px", "150px", "rgb(90, 70, 90)", "I am a simple box");
 
@@ -18,6 +18,16 @@ function main() {
         ["boxy", "pale-bg"],
         "My paragraph"
     );
+
+    for (let i = 0; i < 20; i++) {
+        addNewElement(
+            app,
+            "p",
+            "mySpecialPar",
+            ["boxy", "pale-bg"],
+            "My paragraph"
+        );
+    }
 }
 
 //TODO work on properties
