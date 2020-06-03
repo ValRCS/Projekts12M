@@ -34,6 +34,9 @@ function addManyElements() {
 
 function deleteElements() {
     console.log("Clearing Elements");
+    while (innerCont.firstChild) {
+        innerCont.removeChild(innerCont.firstChild);
+    }
 }
 
 function addEventHandlers() {
