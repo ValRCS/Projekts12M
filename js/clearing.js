@@ -14,6 +14,8 @@ function addEventHandlers() {
     console.log("adding Handlers");
     //add event handlers here
     //you will need to find the elements
+    //TODO add button should call addElements
+    //TODO clear button should call deleteElements
 }
 
 addEventHandlers();
