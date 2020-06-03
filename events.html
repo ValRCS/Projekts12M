@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Events</title>
+        <style>
+            .box {
+                height: 50px;
+                width: 100px;
+                background-color: beige;
+                margin: 5px;
+            }
+        </style>
+        <script src="js/events.js" defer></script>
+    </head>
+
+    <body>
+        <div onclick="alert('You clicked me!');" class="box">Box01</div>
+        <div onclick="console.log(5+5);" class="box">Box02</div>
+        <div onclick="onMyClick()" class="box">Box03</div>
+        <div
+            onmousedown="console.log('Mouse Down!');"
+            onmouseup="console.log('Mouse Up');"
+            class="box"
+        >
+            Box04
+        </div>
+        <div class="box">Box05</div>
+        <div class="box" id="box-id01">Box001</div>
+        <div class="box" id="box-id02">Box002</div>
+        <div class="box" id="box-id03">Box003</div>
+        <div class="box" id="box-id04">Box004</div>
+        <div class="box" id="box-id05">Box005</div>
+    </body>
+</html>
