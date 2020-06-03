@@ -22,13 +22,17 @@ function addElement(parent, tag, id, classList, content) {
 function addManyElements() {
     console.log("Adding Many Elements");
     for (let i = 0; i < 10; i++) {
-        addElement(
-            innerCont,
-            "div",
-            "b-id-" + i,
-            ["box", "red-box"],
-            "Kaste " + i
-        );
+        const id = "b-id-" + i;
+        const classList = ["box"];
+        //backticks https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+        console.log(`Adding index ${i} id ${id} with `);
+        if (i % 2 === 0) {
+            classList.push("red-box");
+        } else {
+            classList.push("green-box");
+        }
+        // console.log(classList);
+        addElement(innerCont, "div", id, classList, "Kaste " + i);
     }
 }
 
