@@ -50,6 +50,7 @@ function deleteElements() {
 
 function onMaxChange() {
     console.log("New value might be", maxCountEl.value);
+    //IMPORTANT need to convert to Number instead of String
     const tvalue = parseInt(maxCountEl.value);
     //sanity check
     if (tvalue > MAX || tvalue < MIN) return;
@@ -67,7 +68,11 @@ function addEventHandlers() {
     addManyBtn.onclick = addManyElements;
     //we do not even need to save the buttons
     document.getElementById("btn-id-clear").onclick = deleteElements;
-    maxCountEl.onchange = onMaxChange;
+    maxCountEl.onchange = onMaxChange; //this happens when value is finalize
+    //so there is difference between onchange and oninput
+    //oninput fires whenever value is changed on the fly
+    maxCountEl.oninput = (ev) =>
+        console.log("Fires while changing", ev.target.value);
     //add event handlers here
     //you will need to find the elements
     //TODO add button should call addElements
