@@ -2,6 +2,9 @@ console.log("Started Clearing js");
 //globals
 const innerCont = document.getElementById("id-inner-cont");
 const maxCountEl = document.getElementById("max-count");
+let maxCount = 20;
+const MAX = 100;
+const MIN = 0;
 
 //Add Listeners to each button
 
@@ -23,7 +26,7 @@ function addElement(parent, tag, id, classList, content) {
 function addManyElements() {
     console.log("Adding Many Elements");
     //TODO get rid of magic 10
-    for (let i = 0; i < maxCountEl.value; i++) {
+    for (let i = 0; i < maxCount; i++) {
         const id = "b-id-" + i;
         const classList = ["box"];
         //backticks https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
@@ -45,6 +48,17 @@ function deleteElements() {
     }
 }
 
+function onMaxChange() {
+    console.log("New value might be", maxCountEl.value);
+    const tvalue = parseInt(maxCountEl.value);
+    //sanity check
+    if (tvalue > MAX || tvalue < MIN) return;
+
+    maxCount = tvalue;
+    console.log("Actually maxcount is", maxCount);
+    console.log(maxCount, typeof maxCount);
+}
+
 function addEventHandlers() {
     console.log("adding Handlers");
     const addBtn = document.getElementById("btn-id-add");
@@ -53,6 +67,7 @@ function addEventHandlers() {
     addManyBtn.onclick = addManyElements;
     //we do not even need to save the buttons
     document.getElementById("btn-id-clear").onclick = deleteElements;
+    maxCountEl.onchange = onMaxChange;
     //add event handlers here
     //you will need to find the elements
     //TODO add button should call addElements
