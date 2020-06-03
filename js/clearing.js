@@ -1,6 +1,7 @@
 console.log("Started Clearing js");
 //globals
 const innerCont = document.getElementById("id-inner-cont");
+const maxCountEl = document.getElementById("max-count");
 
 //Add Listeners to each button
 
@@ -21,7 +22,8 @@ function addElement(parent, tag, id, classList, content) {
 
 function addManyElements() {
     console.log("Adding Many Elements");
-    for (let i = 0; i < 10; i++) {
+    //TODO get rid of magic 10
+    for (let i = 0; i < maxCountEl.value; i++) {
         const id = "b-id-" + i;
         const classList = ["box"];
         //backticks https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
