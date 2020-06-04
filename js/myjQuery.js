@@ -1,0 +1,21 @@
+$("h1").css("background-color", "green");
+$(".box")
+    .css("height", "100px")
+    .css("background-color", "red")
+    .css("margin", "5px");
+// $(".box").css("background-color", "orange");
+$(".box").addClass("big-boxes");
+
+$("#change-boxes").on("click", (event) => console.log("Clicked me"));
+
+//we add listeners to ALL elements selected with (".box")
+// in this case all elements which have class box
+$(".box").on("click", onBoxClick);
+
+function onBoxClick(event) {
+    if (event.target.style.backgroundColor === "orange") {
+        event.target.style.backgroundColor = "red";
+    } else {
+        event.target.style.backgroundColor = "orange";
+    }
+}
