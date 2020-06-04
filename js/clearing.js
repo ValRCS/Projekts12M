@@ -2,7 +2,11 @@ console.log("Started Clearing js");
 //globals
 const innerCont = document.getElementById("id-inner-cont");
 const maxCountEl = document.getElementById("max-count");
-let maxCount = 20;
+let maxCount = 20; //we use to cache maxCountEl.value
+const greetEl = document.getElementById("custom-name");
+const colorPickerEl = document.getElementById("box-color");
+
+let lastBoxId = 0;
 const MAX = 100;
 const MIN = 0;
 
@@ -12,7 +16,9 @@ function onAddElement(event) {
     console.log("Adding SingleElement call from", event.currentTarget.id);
     //Avoid using innerHTML because it is easy to mess up HTML and introduce security issues
     // innerCont.innerHTML += "<div class='inner-box'>Kaste</div>";
-    addElement(innerCont, "div", null, ["box", "red-box"], "Kaste");
+    lastBoxId++;
+    const id = "b-id-" + lastBoxId;
+    addElement(innerCont, "div", id, ["box", "red-box"], "Kaste" + lastBoxId);
 }
 
 function addElement(parent, tag, id, classList, content) {
@@ -27,7 +33,8 @@ function addManyElements() {
     console.log("Adding Many Elements");
     //TODO get rid of magic 10
     for (let i = 0; i < maxCount; i++) {
-        const id = "b-id-" + i;
+        lastBoxId++; //global variable
+        const id = "b-id-" + lastBoxId;
         const classList = ["box"];
         //backticks https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
         console.log(`Adding index ${i} id ${id} with `);
@@ -37,12 +44,14 @@ function addManyElements() {
             classList.push("green-box");
         }
         // console.log(classList);
-        addElement(innerCont, "div", id, classList, "Kaste " + i);
+        // addElement(innerCont, "div", id, classList, "Kaste " + lastBoxId);
+        addElement(innerCont, "div", id, classList, greetEl.value + lastBoxId);
     }
 }
 
 function deleteElements() {
     console.log("Clearing Elements");
+    lastBoxId = 0;
     while (innerCont.firstChild) {
         innerCont.removeChild(innerCont.firstChild);
     }
@@ -77,6 +86,39 @@ function addEventHandlers() {
     //you will need to find the elements
     //TODO add button should call addElements
     //TODO clear button should call deleteElements
+    greetEl.oninput = onGreetingChange;
+
+    //with addEventListener I can attach multiple functions to same event
+    colorPickerEl.addEventListener("change", () =>
+        console.log("Color Changing")
+    );
+    colorPickerEl.addEventListener("change", (ev) =>
+        console.log("Color Changing to", ev.target.value)
+    );
+    colorPickerEl.addEventListener("change", onColorChange);
 }
 
+function onColorChange(event) {
+    console.log("Yeah new color is", event.target.value);
+}
+
+function onGreetingChange(event) {
+    console.log("New greeting is", event.target.value);
+    //TODO change greeting on all boxes
+    //below returns HTMLCollection which Live meaning it updates
+    // const boxes = document.getElementsByClassName('box');
+    //alternative use querySelectorAll which returns static NodeList
+    const boxes = document.querySelectorAll(".box");
+    console.log(boxes.length, typeof boxes);
+    //alterantive would be
+    for (let i = 0; i < boxes.length; i++) {
+        console.log(boxes[i].id, boxes[i].innerText);
+    }
+    //if we do not need index we can use the newer loop style
+    for (const boxEl of boxes) {
+        //boxEl.id.split("-")[2]; depends on actually haveing at least two - in your id
+        boxEl.innerText = event.target.value + " " + boxEl.id.split("-")[2];
+        //how to preserver number for the box?
+    }
+}
 addEventHandlers();
