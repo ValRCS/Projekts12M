@@ -1,10 +1,24 @@
-const addBtn = document.querySelector(".btn-get-data");
+const addBtn = document.querySelector(".btn-fetch-data");
+const ajaxBtn = document.querySelector(".btn-ajax-data");
 const containerEl = document.querySelector(".container");
 
 addBtn.onclick = onAddClick;
+ajaxBtn.onclick = onAjaxClick;
 //we could of course add multiple functions
 // addBtn.addEventListener("click", onAddClick);
 // addBtn.addEventListener("click", (ev) => console.log("clik"));
+
+function onAjaxClick() {
+    console.log("Clicked AJAX button");
+    //https://api.jquery.com/jquery.ajax/
+    $.ajax({
+        url: "https://jsonplaceholder.typicode.com/todos/2",
+        cache: false,
+    }).done(function (json) {
+        console.log("should be done", json);
+        console.log(json.title);
+    });
+}
 
 function onAddClick() {
     console.log("Going to add some Data!");
