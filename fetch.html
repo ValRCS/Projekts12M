@@ -4,13 +4,29 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Fetch</title>
+        <style>
+            .url-field {
+                /* display: inline-block; */
+                width: 300px;
+            }
+        </style>
         <script src="vendor/js/jquery-3.5.1.min.js"></script>
         <script src="js/fetch.js" defer></script>
     </head>
     <body>
         <h1>Fetching Data from external resources</h1>
+        <input
+            type="url"
+            name="url-field"
+            class="url-field"
+            id="url-field"
+            value="https://jsonplaceholder.typicode.com/todos"
+        />
+
         <button class="btn btn-fetch-data">Get Data Fetch</button>
         <button class="btn btn-ajax-data">Get Data AJAX</button>
+        <button class="btn btn-all-data">Get All Data</button>
+        <button class="btn btn-clear-data">Clear All</button>
         <hr />
         <div class="container"></div>
     </body>
