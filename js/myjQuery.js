@@ -27,9 +27,20 @@ function main() {
     // );
     //change text for all children of .container
     $(".container").children().text("All my children");
+
+    //plain Javascript
+    const newEl = document.createElement("p");
+    newEl.innerText = "Some content";
+    document.getElementById("id-box-2").appendChild(newEl);
+
+    //jQuery i could append multiple elements
+    $("#id-box-2").append("<p>New Paragraph</p>");
+    $(".box").append("<p>paragraphs for all</p>");
 }
 
 function onBoxClick(event) {
+    console.log(event.currentTarget.id);
+    event.currentTarget.innerText = "Kaste " + event.currentTarget.id;
     if (event.target.style.backgroundColor === "orange") {
         event.target.style.backgroundColor = "red";
     } else {
