@@ -13,11 +13,8 @@ function onAjaxClick() {
     //https://api.jquery.com/jquery.ajax/
     $.ajax({
         url: "https://jsonplaceholder.typicode.com/todos/2",
-        cache: false,
-    }).done(function (json) {
-        console.log("should be done", json);
-        console.log(json.title);
-    });
+        cache: true, //TODO read up on cache refresh times
+    }).done(createMyElement);
 }
 
 function onAddClick() {
