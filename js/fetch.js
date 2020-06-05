@@ -4,23 +4,27 @@ const getAllBtn = document.querySelector(".btn-all-data");
 const containerEl = document.querySelector(".container");
 const urlAddr = document.getElementById("url-field");
 const clearAll = document.querySelector(".btn-clear-data");
+addAllHandlers();
 
-addBtn.onclick = onAddClick;
-ajaxBtn.onclick = onAjaxClick;
-getAllBtn.onclick = onAllClick;
-//now we can use Enter to get new data
-urlAddr.onchange = onAllClick;
+function addAllHandlers() {
+    addBtn.onclick = onAddClick;
+    ajaxBtn.onclick = onAjaxClick;
+    getAllBtn.onclick = onAllClick;
+    //now we can use Enter to get new data
+    urlAddr.onchange = onAllClick;
 
-clearAll.onclick = (event) => {
-    console.log(
-        "Clicked on",
-        event.currentTarget.innerText,
-        "Clearing elements"
-    );
-    while (containerEl.firstChild) {
-        containerEl.removeChild(containerEl.firstChild);
-    }
-};
+    clearAll.onclick = (event) => {
+        console.log(
+            "Clicked on",
+            event.currentTarget.innerText,
+            "Clearing elements"
+        );
+        while (containerEl.firstChild) {
+            containerEl.removeChild(containerEl.firstChild);
+        }
+    };
+}
+
 //we could of course add multiple functions
 // addBtn.addEventListener("click", onAddClick);
 // addBtn.addEventListener("click", (ev) => console.log("clik"));
