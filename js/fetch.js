@@ -56,7 +56,13 @@ function processManyElements(json) {
     // }
     //alternative when we need an index
     for (let i = 0; i < json.length; i++) {
-        createMyElement(json[i]);
+        const myClassList = ["box"];
+        if (i % 2 === 0) {
+            myClassList.push("gray-style");
+        } else {
+            myClassList.push("important-style");
+        }
+        createMyElement(json[i], myClassList);
         const newHr = document.createElement("hr");
         //if for some reason we wanted to access individual hr elements
         newHr.id = "hr-" + i;
@@ -81,11 +87,11 @@ function onAddClick() {
         .then((json) => createMyElement(json));
 }
 
-function createMyElement(json) {
+function createMyElement(json, myClassList = []) {
     console.log(json);
     console.log(json.title);
     const newEl = document.createElement("p");
-    newEl.innerText = json.title;
+    newEl.classList.add(...myClassList);
     containerEl.appendChild(newEl);
 
     //iterate over objects properties
