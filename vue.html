@@ -10,8 +10,25 @@
     <body>
         <h1>Vue Example</h1>
         <div class="" id="app">
+            <button v-on:click="reverseMessage">Reverse Message</button>
+            <input v-model="message" />
             {{ message }}
+
+            <p>My message to you Rudy {{ message }}</p>
+            <div class="myCapital">Big: {{ capitalMessage }}</div>
             <p>My greeting to you: {{ greeting }}</p>
+            <span v-bind:title="message">
+                Hover your mouse over me for a few seconds to see my dynamically
+                bound title!
+            </span>
+            <div class="">
+                <button v-on:click="toggleElement">Toggle!</button>
+            </div>
+
+            <hr />
+            <span v-if="seen">Now you see me</span>
         </div>
+        <hr />
+        <footer>Footer Not controlled by vue</footer>
     </body>
 </html>
